@@ -20,3 +20,5 @@ Desenvolver habilidades básicas para criar páginas web, compreender a lógica 
 ## Como usar este repositório
 
 Cada pasta ou arquivo pode representar uma aula, exercício ou atividade. Acompanhe as instruções das aulas e pratique os conteúdos para consolidar o aprendizado.
+
+Vitor
