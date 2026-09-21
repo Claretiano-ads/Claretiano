@@ -1,0 +1,34 @@
+p{
+    color:blueviolet;
+    font-size: 20px;
+}
+
+.Negrito{
+    font-weight: bold;
+    color:bisque;
+}
+
+#Italico{
+    font-style: italic;
+    color:red
+}
+
+
+.Perigo{
+    background-color: red;
+    color: white;
+    &:hover {
+        background-color: darkred;
+    }
+    transition-delay: 0.3s;
+    transition-property: background-color;
+    transition-duration: 0.3s;
+    border: 1px solid darkred;
+    cursor: pointer;
+    padding: 10px 20px;
+}
+
+#Sorte{
+    background-color: green;
+    color: white;
+}

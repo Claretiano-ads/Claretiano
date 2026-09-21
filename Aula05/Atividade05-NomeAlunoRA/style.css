@@ -1,0 +1,13 @@
+/* Arquivo: estilo.css */
+
+/* Formatando o corpo da página inteira */
+body {
+    background-color: #f4f4f9; /* Um tom de cinza bem claro para o fundo */
+    font-family: Arial, Helvetica, sans-serif; /* Tipografia padrão */
+    color: #333333; /* Cor do texto padrão (cinza escuro) */
+}
+
+/* Opcional: Formatando os títulos para dar um contraste legal */
+h1, h2 {
+    color: #0056b3; /* Um tom de azul para a identidade da Editora */
+}
