@@ -1,0 +1,63 @@
+/* 1. CONFIGURAÇÃO GERAL E BORDAS PARA VERMOS AS CAIXAS */
+body {
+    font-family: Arial, sans-serif;
+    background-color: #E8E8E8; /* Fundo cinza claro */
+    padding: 20px;
+}
+
+header, nav, section, article, aside, footer {
+    border: solid 2px #666666; /* Borda sólida para imitar o desenho */
+    background-color: #FFFFFF; /* Fundo branco */
+    padding: 15px; /* Espaço interno para o texto não colar na borda */
+    margin-bottom: 10px; /* Empurra a caixa de baixo */
+    text-align: center; /* Centraliza o texto */
+}
+
+/* 2. FORMATANDO O MENU DE NAVEGAÇÃO */
+ul.menu {
+    list-style-type: none; /* Remove as bolinhas da lista */
+    margin: 0px; /* */
+    padding: 0px; /* */
+}
+
+li.menu {
+    float: left; /* Coloca os botões do menu um ao lado do outro */
+    margin-right: 5px;
+}
+
+/* 3. POSICIONANDO O MEIO DO SITE (LADO A LADO) */
+section {
+    width: 60%; /* A seção principal ocupará 60% da tela */
+    float: left; /* Joga a caixa para a esquerda */
+}
+
+aside {
+    width: 25%; /* A lateral ocupará 25% da tela */
+    float: right; /* Joga a caixa para a direita */
+    height: 150px; /* Força uma altura para ficar parecida com o desenho */
+}
+
+/* 4. O RODAPÉ */
+footer {
+    clear: both; /* Propriedade importantíssima! Limpa o efeito do float para que o rodapé fique lá embaixo */
+    background-color: #000080; /* Azul escuro */
+    color: #FFFFFF; /* Letra branca */
+}
+
+/* ESTADO NORMAL: Como o link aparece antes de passar o mouse */
+a.menu:link, a.menu:visited {
+    background-color: #0047B2; /* Azul elegante[cite: 2] */
+    color: #FFFFFF; /* Letra branca[cite: 2] */
+    display: block; /* Transforma o texto em um "bloco" clicável (botão)[cite: 2] */
+    text-align: center; /* Centraliza o texto no botão[cite: 2] */
+    text-decoration: none; /* Tira aquele sublinhado feio padrão dos links[cite: 2] */
+    width: 130px; /* Largura padrão de cada botão[cite: 2] */
+    font-weight: bold; /* Deixa a letra em negrito[cite: 2] */
+    padding: 10px 5px; /* Deixa o botão mais "gordinho" e fácil de clicar[cite: 2] */
+}
+
+/* O EFEITO MÁGICO (HOVER): Quando o mouse passa por cima */
+a.menu:hover, a.menu:active {
+    background-color: #FF0000; /* Muda o fundo para Vermelho! */
+    color: #FFFFFF; /* Garante que a letra continue branca */
+}
