@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Atividade 08 - Nome Aluno - RA</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="conteudo">
+        <h2>Atividade 08: Validação Dinâmica</h2>
+        <p class="instrucao">Substitua o pop-up por mensagens na tela e bordas coloridas nos campos!</p>
+
+        <form id="formAtividade" action="">
+            <!-- Campo Nome -->
+            <div class="grupo-campo">
+                <label for="txtNome">Nome Completo:</label>
+                <input type="text" id="txtNome" class="campo" placeholder="Digite seu nome completo" />
+                <span id="erroNome" class="mensagem-erro"></span>
+            </div>
+
+            <!-- Campo E-mail (Desafio dos alunos) -->
+            <div class="grupo-campo">
+                <label for="txtEmail">E-mail de Contato:</label>
+                <input type="text" id="txtEmail" class="campo" placeholder="exemplo@dominio.com" />
+                <span id="erroEmail" class="mensagem-erro"></span>
+            </div>
+
+            <!-- Campo Senha -->
+            <div class="grupo-campo">
+                <label for="txtSenha">Senha:</label>
+                <input type="password" id="txtSenha" class="campo" placeholder="Mínimo 6 caracteres" />
+                <span id="erroSenha" class="mensagem-erro"></span>
+            </div>
+
+            <!-- Botões -->
+            <div class="grupo-botoes">
+                <input type="button" class="botao botao-primario" value="Enviar Dados" onclick="validarAtividade()" />
+                <input type="button" class="botao botao-secundario" value="Limpar" onclick="limparCampos()" />
+            </div>
+
+            <!-- Feedback de Sucesso -->
+            <div id="mensagemSucesso" class="status-box"></div>
+        </form>
+    </div>
+
+</body>
+</html>

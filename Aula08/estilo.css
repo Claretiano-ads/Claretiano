@@ -1,0 +1,144 @@
+/* ==========================================================================
+   Aula 08 - Estilos com estados visuais dinâmicos (JavaScript + CSS)
+   ========================================================================== */
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f4f6f9;
+    margin: 0;
+    padding: 30px;
+    color: #333333;
+}
+
+/* Caixa principal do formulário */
+#conteudo {
+    max-width: 480px;
+    margin: 0 auto;
+    padding: 25px 30px;
+    background-color: #ffffff;
+    border: 1px solid #dcdcdc;
+    border-radius: 8px;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+}
+
+h2 {
+    color: #000080;
+    margin-top: 0;
+    margin-bottom: 8px;
+}
+
+.subtitulo {
+    font-size: 14px;
+    color: #666666;
+    margin-bottom: 20px;
+}
+
+/* Agrupamento de cada campo e seu rótulo/erro */
+.grupo-campo {
+    margin-bottom: 18px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-weight: bold;
+    font-size: 14px;
+    margin-bottom: 6px;
+    color: #333333;
+}
+
+/* Estilo padrão dos campos de entrada */
+input.campo {
+    padding: 10px 12px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    outline: none;
+    transition: border-color 0.2s, box-shadow 0.2s, background-color 0.2s;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+input.campo:focus {
+    border-color: #0047b2;
+    box-shadow: 0 0 4px rgba(0, 71, 178, 0.3);
+}
+
+/* ==========================================================================
+   Classes dinâmicas aplicadas via JavaScript
+   ========================================================================== */
+
+/* 1. Estado de Erro: borda vermelha e fundo suave */
+input.campo.campo-erro {
+    border-color: #d9534f !important;
+    background-color: #fff2f2;
+}
+
+/* 2. Estado de Sucesso: borda verde */
+input.campo.campo-sucesso {
+    border-color: #3c763d !important;
+    background-color: #f4fff4;
+}
+
+/* 3. Mensagem de erro em texto abaixo do campo */
+.mensagem-erro {
+    color: #d9534f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 5px;
+    min-height: 16px; /* Garante espaço para a mensagem sem dar solavancos bruscos */
+}
+
+/* Grupo de botões */
+.grupo-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 10px;
+}
+
+/* Botões */
+input.botao {
+    cursor: pointer;
+    font-weight: bold;
+    font-size: 14px;
+    padding: 10px 18px;
+    border-radius: 4px;
+    border: none;
+    transition: background-color 0.2s;
+}
+
+.botao-primario {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+.botao-primario:hover {
+    background-color: #002299;
+}
+
+.botao-secundario {
+    background-color: #e0e0e0;
+    color: #333333;
+}
+
+.botao-secundario:hover {
+    background-color: #d0d0d0;
+}
+
+/* ==========================================================================
+   Caixa de Feedback Geral (Sucesso)
+   ========================================================================== */
+.status-box {
+    display: none;
+    margin-top: 18px;
+    padding: 12px 15px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-box.sucesso {
+    display: block;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}

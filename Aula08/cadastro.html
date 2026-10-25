@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Aula 08 - Validação Dinâmica no DOM</title>
+    <!-- Folha de estilos CSS -->
+    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <!-- Script JavaScript externo -->
+    <script type="text/javascript" src="script.js" defer></script>
+</head>
+<body>
+
+    <div id="conteudo">
+        <h2>Cadastro de Usuário</h2>
+        <p class="subtitulo">Preencha os campos abaixo. A validação agora ocorre diretamente na página!</p>
+
+        <form id="formAssinatura" action="">
+            <!-- Campo Usuário -->
+            <div class="grupo-campo">
+                <label for="txtUsuario">Nome de Usuário:</label>
+                <input type="text" id="txtUsuario" class="campo" placeholder="Ex: joaosilva" />
+                <span id="erroUsuario" class="mensagem-erro"></span>
+            </div>
+
+            <!-- Campo Senha -->
+            <div class="grupo-campo">
+                <label for="txtSenha">Senha:</label>
+                <input type="password" id="txtSenha" class="campo" placeholder="Mínimo de 6 caracteres" />
+                <span id="erroSenha" class="mensagem-erro"></span>
+            </div>
+
+            <!-- Campo Confirmação de Senha -->
+            <div class="grupo-campo">
+                <label for="txtConfirmaSenha">Confirme a Senha:</label>
+                <input type="password" id="txtConfirmaSenha" class="campo" placeholder="Repita a senha digitada" />
+                <span id="erroConfirmaSenha" class="mensagem-erro"></span>
+            </div>
+
+            <!-- Ações do Formulário -->
+            <div class="grupo-botoes">
+                <input type="button" class="botao botao-primario" value="Cadastrar" onclick="validarForm()" />
+                <input type="button" class="botao botao-secundario" value="Limpar" onclick="limparFormulario()" />
+            </div>
+
+            <!-- Área de feedback de sucesso na página (sem popup alert) -->
+            <div id="mensagemStatus" class="status-box"></div>
+        </form>
+    </div>
+
+</body>
+</html>
