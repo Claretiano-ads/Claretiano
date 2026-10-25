@@ -23,9 +23,13 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "php.validate.executablePath": "/usr/bin/php"
+        "php.validate.executablePath": "/usr/bin/php",
+        "phpserver.phpPath": "/usr/bin/php",
+        "phpserver.ip": "0.0.0.0",
+        "phpserver.port": 8000
       },
       "extensions": [
+        "brapifra.phpserver",
         "xdebug.php-debug",
         "bmewburn.vscode-intelephense-client"
       ]
