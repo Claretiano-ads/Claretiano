@@ -1,8 +1,13 @@
 {
-  "name": "Ambiente PHP 8.2 + MySQL + phpMyAdmin (ADS)",
+  "name": "Ambiente Oficial PHP 8.2 + MySQL + phpMyAdmin (ADS)",
   "build": {
     "dockerfile": "Dockerfile",
     "context": "."
+  },
+  "features": {
+    "ghcr.io/devcontainers/features/node:1": {
+      "version": "lts"
+    }
   },
   "postStartCommand": "/usr/local/bin/start-services.sh",
   "forwardPorts": [8000, 8080, 3306],
@@ -23,8 +28,8 @@
   "customizations": {
     "vscode": {
       "settings": {
-        "php.validate.executablePath": "/usr/bin/php",
-        "phpserver.phpPath": "/usr/bin/php",
+        "php.validate.executablePath": "/usr/local/bin/php",
+        "phpserver.phpPath": "/usr/local/bin/php",
         "phpserver.ip": "0.0.0.0",
         "phpserver.port": 8000
       },
@@ -34,5 +39,6 @@
         "bmewburn.vscode-intelephense-client"
       ]
     }
-  }
+  },
+  "remoteUser": "vscode"
 }
