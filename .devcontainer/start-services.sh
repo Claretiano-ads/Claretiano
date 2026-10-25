@@ -8,9 +8,9 @@ echo "🚀 Iniciando banco de dados MariaDB (MySQL)..."
 sudo service mariadb start
 
 # Garante que o usuário 'root' (senha 'root') e o banco 'aula_php' estejam prontos
-#/null || true
-#sudo mysql -uroot -proot -e "CREATE USER IF NOT EXISTS 'root'@'127.0.0.1' IDENTIFIED BY 'root';" 2>/dev/null || true
-#sudo mysql -uroot -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' WITH GRANT OPTION;" 2>/dev/null || true
+sudo mysql -e "ALTER USER 'root'@'localhost' IDENTIFIED VIA mysql_native_password USING PASSWORD('root');" 2>/dev/null || true
+sudo mysql -uroot -proot -e "CREATE USER IF NOT EXISTS 'root'@'127.0.0.1' IDENTIFIED BY 'root';" 2>/dev/null || true
+sudo mysql -uroot -proot -e "GRANT ALL PRIVILEGES ON *.* TO 'root'@'127.0.0.1' WITH GRANT OPTION;" 2>/dev/null || true
 #sudo mysql -uroot -proot -e "CREATE DATABASE IF NOT EXISTS aula_php DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_unicode_ci;" 2>/dev/null || true
 #sudo mysql -uroot -proot -e "FLUSH PRIVILEGES;" 2>/dev/null || true
 
