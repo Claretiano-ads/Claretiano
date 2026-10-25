@@ -1,98 +1,53 @@
 <?php
 /* ==========================================================================
-   Aula 09 - Painel de Diagnóstico do Container (O "Dashboard do XAMPP" no Codespaces)
-   Mostra ao aluno que o PHP está rodando no Servidor Linux e conectado ao MySQL
+   Aula 09 - Explicação Visual: Do XAMPP (htdocs) ao GitHub Codespaces (Docker)
+   Demonstra variáveis básicas ($), concatenação (.) e comando echo
    ========================================================================== */
 
-require_once __DIR__ . '/conexao.php';
-
-// Consulta a versão exata do servidor MariaDB/MySQL rodando no container
-$versaoBanco = $pdo->query("SELECT VERSION() AS versao")->fetch()['versao'];
+$nomeSistema     = "Sistema de Vendas - Editora Br@sil";
+$versaoPhp       = PHP_VERSION;
+$sistemaServidor = php_uname('s');
+$pastaRaiz       = $_SERVER['DOCUMENT_ROOT'];
+$dataAtual       = date("d/m/Y H:i:s");
 ?>
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
-    <meta charset="utf-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Aula 09 - Diagnóstico do Ambiente (XAMPP vs Docker)</title>
-    <link rel="stylesheet" type="text/css" href="estilo.css" />
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Raio-X do Servidor PHP - Aula 09</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
 </head>
 <body>
 
     <div id="conteudo">
-        <div class="barra-topo">
-            <span><strong>Ambiente:</strong> GitHub Codespaces (Container Docker)</span>
-            <a href="index.php">&larr; Voltar para o Sistema de Cadastro</a>
+        <div class="barra-servidor">
+            <span><strong>Servidor Ativo!</strong></span>
+            <a href="cadastro.html">&larr; Voltar para o Cadastro da Editora Br@sil</a>
         </div>
 
-        <h2>Raio-X do Servidor (XAMPP &rarr; Codespaces)</h2>
+        <h2>Raio-X: XAMPP vs. GitHub Codespaces</h2>
         <p class="subtitulo">
-            No XAMPP tradicional, abríamos o painel de controle no Windows para checar o <strong>Apache</strong> e o <strong>MySQL</strong>.
-            Aqui no GitHub Codespaces, tudo roda dentro de um container Linux configurado via código!
+            Arquivos <code>.php</code> não abrem com dois cliques! Eles precisam de um Servidor Web.
+            Veja abaixo as informações geradas em tempo real pelo comando <code>echo</code> do PHP:
         </p>
 
-        <table class="tabela-dados">
-            <thead>
-                <tr>
-                    <th>Componente (Sigla XAMPP)</th>
-                    <th>No XAMPP Tradicional</th>
-                    <th>No Nosso Container Docker</th>
-                    <th>Status Atual</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td><strong>X</strong> (Sistema Operacional)</td>
-                    <td>Windows Local</td>
-                    <td><code><?= php_uname('s') . ' (' . php_uname('m') . ')' ?></code></td>
-                    <td><span class="badge badge-ok">Ativo</span></td>
-                </tr>
-                <tr>
-                    <td><strong>A</strong> (Servidor Web / htdocs)</td>
-                    <td><code>C:\xampp\htdocs\Aula09</code></td>
-                    <td><code><?= htmlspecialchars($_SERVER['DOCUMENT_ROOT']) ?></code></td>
-                    <td><span class="badge badge-ok">Porta 8000</span></td>
-                </tr>
-                <tr>
-                    <td><strong>M</strong> (Banco MySQL / MariaDB)</td>
-                    <td>MySQL Local (Porta 3306)</td>
-                    <td><code><?= htmlspecialchars($versaoBanco) ?></code></td>
-                    <td><span class="badge badge-ok">Conectado</span></td>
-                </tr>
-                <tr>
-                    <td><strong>P</strong> (Linguagem PHP + php.ini)</td>
-                    <td>PHP Local</td>
-                    <td>PHP <code><?= PHP_VERSION ?></code></td>
-                    <td><span class="badge badge-ok">Ativo</span></td>
-                </tr>
-                <tr>
-                    <td><strong>Extensão PDO MySQL</strong></td>
-                    <td>Habilitado no <code>php.ini</code></td>
-                    <td><code>extension=pdo_mysql</code></td>
-                    <td>
-                        <?php if (extension_loaded('pdo_mysql')): ?>
-                            <span class="badge badge-ok">Carregado</span>
-                        <?php else: ?>
-                            <span class="badge badge-erro">Ausente</span>
-                        <?php endif; ?>
-                    </td>
-                </tr>
-                <tr>
-                    <td><strong>phpMyAdmin</strong></td>
-                    <td><code>localhost/phpmyadmin</code></td>
-                    <td>Aba <strong>PORTS &rarr; Porta 8080</strong> (user: <code>root</code> / pass: <code>root</code>)</td>
-                    <td><span class="badge badge-ok">Porta 8080</span></td>
-                </tr>
-            </tbody>
-        </table>
+        <div class="comprovante-box">
+            <p><strong>Projeto:</strong> <?php echo $nomeSistema; ?></p>
+            <p><strong>Sistema Operacional do Container:</strong> <code><?php echo $sistemaServidor; ?></code></p>
+            <p><strong>Versão do PHP Executando:</strong> <code><?php echo "PHP " . $versaoPhp; ?></code></p>
+            <p><strong>Pasta Raiz (Nosso <code>htdocs</code>):</strong> <code><?php echo $pastaRaiz; ?></code></p>
+            <p><strong>Data/Hora no Servidor:</strong> <?php echo $dataAtual; ?></p>
+        </div>
 
-        <h3>Hora Certa no Servidor (Configurada no <code>php.ini</code>)</h3>
-        <p class="subtitulo">
-            Fuso horário ativo: <code><?= date_default_timezone_get() ?></code> &mdash;
-            Gerado pelo PHP em: <strong><?= date('d/m/Y H:i:s') ?></strong>
-        </p>
+        <div class="aviso-sucesso">
+            <strong>Comparativo Rápido:</strong><br>
+            &bull; <strong>No XAMPP tradicional:</strong> salvávamos na pasta <code>C:\xampp\htdocs\editora\</code>.<br>
+            &bull; <strong>No GitHub Codespaces:</strong> usamos o container Docker direto na pasta <code>Aula09/</code>!
+        </div>
+
+        <a href="cadastro.html" class="botao">Ir para o Formulário da Editora Br@sil &rarr;</a>
     </div>
 
 </body>
 </html>
-
