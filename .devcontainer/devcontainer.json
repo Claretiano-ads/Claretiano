@@ -4,11 +4,6 @@
     "dockerfile": "Dockerfile",
     "context": "."
   },
-  "features": {
-    "ghcr.io/devcontainers/features/node:1": {
-      "version": "lts"
-    }
-  },
   "postStartCommand": "/usr/local/bin/start-services.sh",
   "forwardPorts": [8000, 8080, 3306],
   "portsAttributes": {

@@ -5,16 +5,18 @@
 # ============================================================================
 
 # 1. Imagem Oficial da Microsoft/GitHub para PHP 8.2 no Codespaces
-# Já vem com PHP 8.2, Composer, Xdebug, Apache e Git pré-instalados e em cache no GitHub!
 FROM mcr.microsoft.com/devcontainers/php:1-8.2-bookworm
 
 # 2. Compila e instala os drivers oficiais do MySQL (mysqli e pdo_mysql) para o PHP
-RUN docker-php-ext-install mysqli pdo pdo_mysql \
+# (O módulo base 'pdo' já vem compilado de fábrica na imagem oficial)
+RUN docker-php-ext-install mysqli pdo_mysql \
     && rm -f /usr/local/etc/php/conf.d/docker-php-ext-mysqli.ini \
              /usr/local/etc/php/conf.d/docker-php-ext-pdo_mysql.ini
 
-# 3. Instala o servidor de Banco de Dados MariaDB (MySQL)
-RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
+# 3. Remove o repositório legado do Yarn (cuja chave GPG expirou na imagem base da Microsoft)
+# e instala o servidor de Banco de Dados MariaDB (MySQL)
+RUN rm -f /etc/apt/sources.list.d/yarn.list \
+    && apt-get update && export DEBIAN_FRONTEND=noninteractive \
     && apt-get -y install --no-install-recommends mariadb-server mariadb-client unzip wget procps \
     && apt-get clean -y && rm -rf /var/lib/apt/lists/*
 
@@ -22,7 +24,6 @@ RUN apt-get update && export DEBIAN_FRONTEND=noninteractive \
 COPY php.ini /usr/local/etc/php/conf.d/99-claretiano-php.ini
 COPY start-services.sh /usr/local/bin/start-services.sh
 RUN sed -i 's/\r$//' /usr/local/etc/php/conf.d/99-claretiano-php.ini /usr/local/bin/start-services.sh \
-    && cp /usr/local/etc/php/conf.d/99-claretiano-php.ini /usr/local/etc/php/php.ini \
     && chmod +x /usr/local/bin/start-services.sh
 
 # 5. Pré-configura o banco de dados MariaDB (usuário root / senha root e banco aula_php)
