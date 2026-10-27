@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Editora Br@sil - Assinatura (Aula 09)</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+    <div id="conteudo">
+        <div class="barra-servidor">
+            <span><strong>Unidade 5:</strong> Introdução ao PHP</span>
+            <a href="diagnostico.php">🔍 Raio-X: XAMPP vs Codespaces</a>
+        </div>
+
+        <h2>Editora Br@sil - Venda de Assinaturas</h2>
+        <p class="subtitulo">
+            Preencha os dados abaixo. Ao clicar em confirmar, o formulário enviará os dados via método
+            <code>POST</code> para o nosso primeiro script Back-End: <code>processa_cadastro.php</code>.
+        </p>
+
+        <!-- action aponta para o PHP que receberá os dados; method define envio seguro via POST -->
+        <form action="processa_cadastro.php" method="POST">
+            <div class="grupo-campo">
+                <label for="nome_assinante">Nome Completo:</label>
+                <!-- O atributo 'name' é o identificador que o PHP utilizará no $_POST['nome_assinante']! -->
+                <input type="text" id="nome_assinante" name="nome_assinante" class="campo" placeholder="Ex: Carlos Eduardo" required>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="plano_escolhido">Escolha o Plano:</label>
+                <!-- O PHP lerá este valor em $_POST['plano_escolhido'] -->
+                <select id="plano_escolhido" name="plano_escolhido" class="campo">
+                    <option value="Revista Semestral">Revista Semestral - R$ 59,90</option>
+                    <option value="Revista Anual">Revista Anual - R$ 99,90</option>
+                    <option value="Plano Digital VIP">Plano Digital VIP - R$ 120,00</option>
+                </select>
+            </div>
+
+            <p>
+                <input type="submit" class="botao" value="Confirmar Assinatura">
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
+

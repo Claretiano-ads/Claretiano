@@ -1,0 +1,107 @@
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: #f7f9fa;
+    padding: 25px;
+    margin: 0;
+}
+
+#conteudo {
+    max-width: 460px;
+    margin: 0 auto;
+    background-color: #ffffff;
+    border: 1px solid #cccccc;
+    padding: 25px;
+    border-radius: 6px;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+}
+
+h2 {
+    color: #000080;
+    margin-top: 0;
+}
+
+.instrucao {
+    font-size: 13px;
+    color: #555555;
+    margin-bottom: 20px;
+}
+
+.grupo-campo {
+    margin-bottom: 16px;
+    display: flex;
+    flex-direction: column;
+}
+
+label {
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input.campo {
+    padding: 8px 10px;
+    font-size: 14px;
+    border: 1px solid #bbbbbb;
+    border-radius: 4px;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+}
+
+/* Classes para manipulação pelo JavaScript */
+input.campo.campo-erro {
+    border-color: #d9534f;
+    background-color: #fff4f4;
+}
+
+input.campo.campo-sucesso {
+    border-color: #4cae4c;
+    background-color: #f4fff4;
+}
+
+.mensagem-erro {
+    color: #d9534f;
+    font-size: 12px;
+    font-weight: bold;
+    margin-top: 4px;
+    min-height: 16px;
+}
+
+.grupo-botoes {
+    display: flex;
+    gap: 10px;
+    margin-top: 15px;
+}
+
+input.botao {
+    cursor: pointer;
+    font-weight: bold;
+    padding: 9px 16px;
+    border-radius: 4px;
+    border: none;
+}
+
+.botao-primario {
+    background-color: #000080;
+    color: #ffffff;
+}
+
+.botao-secundario {
+    background-color: #e2e2e2;
+    color: #333333;
+}
+
+.status-box {
+    display: none;
+    margin-top: 15px;
+    padding: 10px;
+    border-radius: 4px;
+    font-size: 14px;
+}
+
+.status-box.sucesso {
+    display: block;
+    background-color: #dff0d8;
+    color: #3c763d;
+    border: 1px solid #d6e9c6;
+}

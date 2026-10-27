@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Atividade 09 - Editora Br@sil - Nome Aluno - RA</title>
+    <link rel="stylesheet" type="text/css" href="estilo.css">
+</head>
+<body>
+
+    <div id="conteudo">
+        <h2>Atividade 09: Ficha Completa - Editora Br@sil</h2>
+        <p class="instrucao">
+            Complete o cadastro abaixo. Os dados serão enviados via <code>method="POST"</code>
+            para o arquivo <code>processa_cadastro.php</code> processar no servidor!
+        </p>
+
+        <!-- Formulário apontando para processa_cadastro.php com método POST -->
+        <form action="processa_cadastro.php" method="POST">
+
+            <!-- 1. Nome do Assinante -->
+            <div class="grupo-campo">
+                <label for="nome_assinante">Nome Completo:</label>
+                <input type="text" id="nome_assinante" name="nome_assinante" class="campo" placeholder="Digite seu nome completo" required>
+            </div>
+
+            <!-- 2. E-mail do Assinante -->
+            <div class="grupo-campo">
+                <label for="email_assinante">E-mail de Contato:</label>
+                <input type="email" id="email_assinante" name="email_assinante" class="campo" placeholder="exemplo@dominio.com" required>
+            </div>
+
+            <!-- 3. Cidade de Entrega -->
+            <div class="grupo-campo">
+                <label for="cidade_assinante">Cidade / UF de Entrega:</label>
+                <input type="text" id="cidade_assinante" name="cidade_assinante" class="campo" placeholder="Ex: Batatais - SP" required>
+            </div>
+
+            <!-- 4. Plano de Assinatura -->
+            <div class="grupo-campo">
+                <label for="plano_escolhido">Escolha o Plano:</label>
+                <select id="plano_escolhido" name="plano_escolhido" class="campo">
+                    <option value="Revista Semestral - R$ 59,90">Revista Semestral - R$ 59,90</option>
+                    <option value="Revista Anual - R$ 99,90">Revista Anual - R$ 99,90</option>
+                    <option value="Plano Digital VIP - R$ 120,00">Plano Digital VIP - R$ 120,00</option>
+                </select>
+            </div>
+
+            <!-- 5. Forma de Pagamento -->
+            <div class="grupo-campo">
+                <label for="forma_pagamento">Forma de Pagamento:</label>
+                <select id="forma_pagamento" name="forma_pagamento" class="campo">
+                    <option value="PIX (10% de Desconto)">PIX (10% de Desconto)</option>
+                    <option value="Cartão de Crédito">Cartão de Crédito</option>
+                    <option value="Boleto Bancário">Boleto Bancário</option>
+                </select>
+            </div>
+
+            <p>
+                <input type="submit" class="botao" value="Finalizar Assinatura">
+            </p>
+        </form>
+    </div>
+
+</body>
+</html>
+

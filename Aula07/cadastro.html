@@ -1,0 +1,25 @@
+<!-- Trecho do formulário no arquivo cadastro.html -->
+
+<!-- Esse trecho deve ficar dentro do body -->
+ <html>
+    <head>
+        <meta charset="utf-8" />
+        <title>Cadastro de Usuário</title>
+        <script type="text/javascript" src="script.js"></script>
+    </head>
+    <body>
+        <form id="formAssinatura" action="">
+            <p>
+                Usuário:<br>
+                <input type="text" id="txtUsuario" class="campo" size="15" />
+            </p>
+            <p>
+                Senha:<br>
+                <input type="password" id="txtSenha" class="campo" size="15" />
+            </p>
+            <!-- O evento onclick avisa: "Ao clicar, execute a função validarForm()" -->
+            <input type="button" class="botao" value="Assinar" onclick="validarForm()" />
+        </form>
+    </body>
+</html>
+<!-- Fim do trecho do formulário no arquivo cadastro.html -->

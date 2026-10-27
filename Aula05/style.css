@@ -1,0 +1,21 @@
+/* Seleciona todos os parágrafos da página */
+p {
+  color: #333333;
+  line-height: 1.5;
+}
+
+
+
+/* Seleciona todos os parágrafos com a classe "destaque" */
+.destaque {
+  font-weight: bold;
+  color: orange;
+}
+
+
+
+/* Seleciona o menu principal */
+#menu-principal {
+  background-color: black;
+  color: white;
+}

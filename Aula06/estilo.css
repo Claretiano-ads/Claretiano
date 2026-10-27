@@ -1,0 +1,99 @@
+/* Centralizando a caixa principal do formulário */
+#conteudo {
+    width: 500px; /* Define a largura da caixa */
+    margin: 0 auto; /* Centraliza horizontalmente na tela */
+    padding: 20px 20px; /* Dá um respiro interno (espaçamento) */
+    background-color: #FFFFFF;
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000080;
+}
+
+/* Deixando os campos de texto mais bonitos */
+input.campo, select.campo, textarea.campo {
+    background-color: #FFFFE0; /* Fundo levemente amarelado */
+    border-style: solid;
+    border-width: 1px;
+    border-color: #000000;
+    padding: 5px; /* Espaço interno para o texto não colar na borda */
+    width: 90%;
+}
+
+/* Estilizando o botão de envio */
+input.botao {
+    width: 100px;
+    background-color: #F0F8FF;
+    font-weight: bold;
+    padding: 5px;
+    border: solid 1px #0047B2;
+}
+
+
+
+/* ==================================================================================*/
+/* Estilizando o menu horizontal */
+/* ==================================================================================*/
+
+
+
+/* Remove as bolinhas da lista e zera as margens */
+ul.menu {
+    list-style-type: none;
+    margin: 0px;
+    padding: 0px;
+}
+
+/* Coloca um item do lado do outro (menu horizontal) */
+li.menu {
+    float: left;
+}
+
+/* Estado normal do link no menu */
+a.menu:link, a.menu:visited {
+    background-color: #000080; /* Azul escuro */
+    color: #FFFFFF; /* Letra branca */
+    display: block;
+    text-align: center;
+    text-decoration: none; /* Tira o sublinhado padrão do link */
+    width: 150px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: bold;
+}
+
+/* Aplicando hover também no botão do formulário de cadastro */
+input.botao:hover {
+    background-color: #0047B2;
+    color: #FFFFFF;
+    cursor: pointer;
+}
+
+/* PSEUDOCLASSE: Efeito ao passar o mouse por cima */
+a.menu:hover, a.menu:active {
+    background-color: #FF0000; /* Muda para vermelho! */
+    transition-duration: 10s; /* Faz a transição durar 1 segundo */
+}
+/* Formatação da Tabela de Planos */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Junta as bordas duplas em uma só */
+}
+
+table, th, td {
+    border-style: solid;
+    border-width: 1px;
+    border-color: #0047B2;
+}
+
+/* Cabeçalho da tabela */
+th {
+    background-color: #0047B2;
+    color: #FFFFFF;
+    padding: 10px;
+}
+
+/* Células da tabela */
+td {
+    padding: 10px;
+    text-align: center;
+}
